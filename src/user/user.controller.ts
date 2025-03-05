@@ -1,14 +1,14 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, UseInterceptors } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './DTO/create-user-dto';
 import { GetUserDto } from './DTO/get-user-dto';
+import { UpdateUserDto } from './DTO/update-user-dto';
+import { LoggersInterceptor } from 'src/Interceptors/log-interceptors';
 
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService){}
 
-
-//post user
   @Post()
   async createUser(@Body() createUserDto: CreateUserDto){
     return this.userService.createUserService(createUserDto)
@@ -26,9 +26,31 @@ export class UserController {
     }))
   }
 
-  //get user{id}
+@Get(':id')
+@UseInterceptors(LoggersInterceptor)
+async getUserById(
+  @Param('id', ParseIntPipe)id:number
+) {
+  const uniqueUser = await this.userService.getUserById(id)
+  
+  return uniqueUser
+  
+}
 
-  //update userd{id}
+@Patch(':id')
+async updateUserById(
+  @Param('id', ParseIntPipe)id:number,
+  @Body() updateUserDto: UpdateUserDto
+){
+  const userUpdated = await this.userService.updateUserByIdService(id,updateUserDto)
+  return userUpdated
+}
 
-  //delete user{id}
+@Delete(':id')
+async deleteUserById(
+  @Param('id', ParseIntPipe)id:number
+){
+  return this.userService.deleteUserByIdService(id)
+}
+
 }
