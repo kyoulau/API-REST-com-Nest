@@ -42,9 +42,19 @@ URL do banco de dados SQLite
 ## Aprendizados
 Meu principal aprendizado aqui foi ter colocado em prática os conceitos de próprio NEST e documentação com Swagger no mesmo lugar, efoi um aprendizado muito desafiador mas importante para mim! Criei essa api com o intuito de colocar em prátia meus conhecimentos em restAPi com o nodeJs juntamente com o Typescript.
 
-## Esquema básico de fuuncionamento
+## Esquema básico de funcionamento
 
+- Overvies da tabase
+  
+![imagem](https://github.com/kyoulau/API-REST-com-Nest/blob/e6bf4011257794cc191e6922981e971bd3f8146e/imagens/Captura%20de%20tela%202025-03-05%20202118.png)
 
+- Fluxo das validações estudadas
+  
+![image](https://github.com/kyoulau/API-REST-com-Nest/blob/e6bf4011257794cc191e6922981e971bd3f8146e/imagens/Captura%20de%20tela%202025-03-05%20202153.png)
+
+- Token
+  
+![image](https://github.com/kyoulau/API-REST-com-Nest/blob/e6bf4011257794cc191e6922981e971bd3f8146e/imagens/Captura%20de%20tela%202025-03-05%20202216.png)
 
 
 ## Conteúdos
