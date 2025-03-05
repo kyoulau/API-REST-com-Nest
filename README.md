@@ -22,9 +22,35 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# RESTful With NESTJS
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Esta é o segundo repositório que coloca em prática o NEST, o antigo repositório teve problema com as variáveis de ambiente. Então, esse repositório é uma "versão 2" do outro, que funciona. Nessa api é possível verificar a criação de listar de tarefas autenticadas por token de usuário, realizando operações de CREATE,READ,UPDATE e DELETE (operações básicas de uma API). O diferencial aqui é a presença de logs e interceptors característicos do NEST.
+
+
+## Variáveis de Ambiente
+
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
+
+`PORT`
+
+Porta padrão para a api rodar.
+
+`DATABASE_URL`
+
+URL do banco de dados SQLite
+
+## Aprendizados
+Meu principal aprendizado aqui foi ter colocado em prática os conceitos de próprio NEST e documentação com Swagger no mesmo lugar, efoi um aprendizado muito desafiador mas importante para mim! Criei essa api com o intuito de colocar em prátia meus conhecimentos em restAPi com o nodeJs juntamente com o Typescript.
+
+## Esquema básico de fuuncionamento
+
+
+
+
+## Conteúdos
+- NestJs
+- SQLite
+- Swagger
 
 ## Project setup
 
@@ -57,6 +83,20 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+
+## Melhorias
+- [ ]  Integração com FrontEnd
+
+
+
+
+## Autores
+
+- [@kyoulau](https://www.github.com/kyoulau)
+
+
+
 
 ## Deployment
 
