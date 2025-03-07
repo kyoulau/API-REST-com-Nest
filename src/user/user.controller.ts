@@ -4,17 +4,22 @@ import { CreateUserDto } from './DTO/create-user-dto';
 import { GetUserDto } from './DTO/get-user-dto';
 import { UpdateUserDto } from './DTO/update-user-dto';
 import { LoggersInterceptor } from 'src/Interceptors/log-interceptors';
+import { SucessInterceptor } from 'src/Interceptors/success-interceptors';
 
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService){}
 
   @Post()
+  @UseInterceptors(SucessInterceptor)
+  @UseInterceptors(LoggersInterceptor)
   async createUser(@Body() createUserDto: CreateUserDto){
     return this.userService.createUserService(createUserDto)
   }
 
   @Get()
+  @UseInterceptors(SucessInterceptor)
+  @UseInterceptors(LoggersInterceptor)
   async getAllUsers(): Promise<GetUserDto[]>{
     const allUsers = await this.userService.findAllUsers();
     return allUsers.map( user =>({
@@ -27,6 +32,7 @@ export class UserController {
   }
 
 @Get(':id')
+@UseInterceptors(SucessInterceptor)
 @UseInterceptors(LoggersInterceptor)
 async getUserById(
   @Param('id', ParseIntPipe)id:number
@@ -38,6 +44,8 @@ async getUserById(
 }
 
 @Patch(':id')
+@UseInterceptors(SucessInterceptor)
+@UseInterceptors(LoggersInterceptor)
 async updateUserById(
   @Param('id', ParseIntPipe)id:number,
   @Body() updateUserDto: UpdateUserDto
@@ -47,6 +55,8 @@ async updateUserById(
 }
 
 @Delete(':id')
+@UseInterceptors(SucessInterceptor)
+@UseInterceptors(LoggersInterceptor)
 async deleteUserById(
   @Param('id', ParseIntPipe)id:number
 ){
